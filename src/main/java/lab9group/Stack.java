@@ -15,8 +15,9 @@ public class Stack<T> implements StackADT<T> {
 	/**
 	 * Constructor for ????
 	 */
-	public Stack() {
+	public Stack(T value, String name) {
 		//implement here
+		this.value = value;
 	}
 	
 	/**

@@ -33,9 +33,18 @@ public class SolvePuzzle {
 	public boolean hasValidPath() {
 
 		boolean pathFound = false;
+		/*
+		Stack<Position> stack = new Stack<>();
 
 		// implement the algorithm here
-
+		pushValidNeighbour(0 ,0, stack);
+		do {
+			Position position = stack.pop();
+			puzzle.markPath(position.getX(), position.getY());
+			puzzle.visitPosition(position.getX(), position.getY());
+			if (puzzle.)
+		} while (stack.size() != 0 && !pathFound);
+		*/
 		return pathFound;
 
 	}
