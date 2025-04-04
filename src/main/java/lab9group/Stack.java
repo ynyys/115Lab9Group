@@ -8,9 +8,9 @@ package lab9group;
 
 public class Stack<T> implements StackADT<T> {
 
-	
 	private Stack<T> previous; 
 	private T value;
+
 
 	/**
 	 * Constructor for ????
@@ -33,7 +33,6 @@ public class Stack<T> implements StackADT<T> {
 	 * @param value
 	 */
 	Stack(Stack<T> previous, T value) {
-		
 		// implement the method here
 	}
 
@@ -42,9 +41,7 @@ public class Stack<T> implements StackADT<T> {
 	 */
 	@Override
 	public void push(T value) {
-
 		// implement the method here
-
 	}
 
 	/**
