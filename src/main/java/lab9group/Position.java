@@ -2,7 +2,6 @@ package lab9group;
 
 /**
  * @author muneebimtiazahmad
- * Oli you are fucking gay. NO!!! I Agree mostly. Are you sure?
  */
 public class Position {
 	
@@ -41,6 +40,5 @@ public class Position {
 	
 	//add more methods as desired 
 
-	//no. erm.
 
 }
