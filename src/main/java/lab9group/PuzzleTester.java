@@ -2,7 +2,6 @@ package lab9group;
 
 /**
  * @author muneebimtiazahmad
- *
  */
 
 public class PuzzleTester {
@@ -16,9 +15,6 @@ public class PuzzleTester {
 	 * Lastly also prints the solved or unsolved maze
 	 */
 	public static void main(String[] args) {
-		
-		
-		
 		
 	}
 
