@@ -9,15 +9,15 @@ package lab9group;
 public class Stack<T> implements StackADT<T> {
 
 	
-	private Stack<T> previous; 
+	private Stack<T> previous;
 	private T value;
 
 	/**
 	 * Constructor for ????
 	 */
-	public Stack(T value, String name) {
+	public Stack() {
 		//implement here
-		this.value = value;
+		//Black Friday
 	}
 	
 	/**
