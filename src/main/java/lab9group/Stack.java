@@ -9,7 +9,7 @@ package lab9group;
 public class Stack<T> implements StackADT<T> {
 
 	
-	private Stack<T> previous;
+	private Stack<T> previous; 
 	private T value;
 
 	/**
@@ -17,7 +17,6 @@ public class Stack<T> implements StackADT<T> {
 	 */
 	public Stack() {
 		//implement here
-		//Black Friday
 	}
 	
 	/**
