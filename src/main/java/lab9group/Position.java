@@ -2,7 +2,7 @@ package lab9group;
 
 /**
  * @author muneebimtiazahmad
- * Oli you are fucking gay. NO!!!
+ * Oli you are fucking gay. NO!!! I Agree
  */
 public class Position {
 	
