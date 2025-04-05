@@ -65,10 +65,6 @@ public class Stack<T> implements StackADT<T> {
 		// Checks if there is anything in the stack if not then value will simply be added into the stack
 		// with no extra need for a previous to occur. The annoying thing is, is that I thought the
 		//.push(value) thing would be simple it but all it would do is just call itself like bruh.
-		// I managed to get the information from
-		// https://jenkov.com/tutorials/java-collections/stack.html#:~:text=You%20push%20elements%20onto%20a,String%3E()%3B%20stack.
-		// and https://hackajob.com/talent/blog/how-to-implement-stacks-and-queues-in-java
-		// just be careful with the second one because i got bombarded with scams.
 		// Are we supposed to import things like java.util.Stack
 		// or nah? like i am guessing we have to make our own .push() instead
 		// of an inbuilt one
@@ -93,6 +89,24 @@ public class Stack<T> implements StackADT<T> {
 		
 		// implement the method here, the return null is added to handle compile error, 
 		// you can delete it.
+		// Checks if it is not empty else will assigned the removed the top value. Then checks
+		//if there is anything previous to the value if not then will set to null.
+		//this.previous.value sets the new head from the previous head.
+		// The best information i have found to use this is from this link
+		// https://levelup.gitconnected.com/selfmade-stack-class-in-java-d401dc7d68f0
+		// It has probably helped me the most in writing this code.
+		// I will most likely refer to this link now later on.
+		if (!this.isEmpty()) {
+			T removed = this.value;
+
+			if (this.previous == null){
+				this.value = null;
+			} else {
+				this.value = this.previous.value;
+				this.previous = this.previous.previous;
+			}
+			return removed;
+		}
 		return null;
 	}
 
@@ -104,7 +118,8 @@ public class Stack<T> implements StackADT<T> {
 		
 		// implement the method here, the return null is added to handle compile error, 
 		// you can delete it.
-		return null;
+		// Looks at the top of the stack and returns it
+		return this.value;
 	}
 
 	
@@ -116,7 +131,8 @@ public class Stack<T> implements StackADT<T> {
 		
 		// implement the method here, the return false is added to handle compile error, 
 		// you can delete it.
-		return false;
+		// checks if the stack is empty
+		return this.previous == null;
 	}
 
 	/**
@@ -126,7 +142,8 @@ public class Stack<T> implements StackADT<T> {
 	public int size() {
 		// implement the method here, the return 1 is added to handle compile error, 
 		// you can delete it.
-		return 1;
+		// Recursively count and adds one until the last item is reached.
+		return this.isEmpty() ? 0 : 1 + this.previous.size();
 	}
 
 	/**
