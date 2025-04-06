@@ -40,7 +40,9 @@ public class Stack<T> implements StackADT<T> {
 	 */
 	Stack(T value) {
 		// implement the method here
-		//Adding the first value to the stack as this. previous will just be nothing - Ioan
+		/**Adding the first value to the stack as this. previous will just be nothing - Ioan
+		 *
+		 */
 		this.value = value;
 		this.previous = null;
 	}
@@ -51,7 +53,9 @@ public class Stack<T> implements StackADT<T> {
 	 */
 	Stack(Stack<T> previous, T value) {
 		// implement the method here
-		//Probably establishes this when there is more than 1 item in the list idk. - Ioan
+		/**Probably establishes this when there is more than 1 item in the list idk. - Ioan
+		 *
+		 */
 		this.previous = previous;
 		this.value = value;
 	}
@@ -61,16 +65,18 @@ public class Stack<T> implements StackADT<T> {
 	 */
 	@Override
 	public void push(T value) {
-		// implement the method here
-		// Checks if there is anything in the stack if not then value will simply be added into the stack
-		// with no extra need for a previous to occur. The annoying thing is, is that I thought the
-		//.push(value) thing would be simple it but all it would do is just call itself like bruh.
-		// Are we supposed to import things like java.util.Stack
-		// or nah? like i am guessing we have to make our own .push() instead
-		// of an inbuilt one
-		// Anyway enough rambling the second part saves the previous values and then reassigns
-		// this.value as the newest top value to the stack so two parts, the head and tail thing that
-		// was taught in A level.
+		/** implement the method here
+		* Checks if there is anything in the stack if not then value will simply be added into the stack
+		 * with no extra need for a previous to occur. The annoying thing is, is that I thought the
+		*.push(value) thing would be simple it but all it would do is just call itself like bruh.
+		* Are we supposed to import things like java.util.Stack
+		* or nah? like i am guessing we have to make our own .push() instead
+		* of an inbuilt one
+		* Anyway enough rambling the second part saves the previous values and then reassigns
+		* this.value as the newest top value to the stack so two parts, the head and tail thing that
+		* was taught in A level.
+		 */
+
 		if (this.value == null){
 			this.value = value;
 		} else {
@@ -89,13 +95,14 @@ public class Stack<T> implements StackADT<T> {
 		
 		// implement the method here, the return null is added to handle compile error, 
 		// you can delete it.
-		// Checks if it is not empty else will assigned the removed the top value. Then checks
+		/** Checks if it is not empty else will assign the removed the top value. Then checks
 		//if there is anything previous to the value if not then will set to null.
-		//this.previous.value sets the new head from the previous head.
+		// this.previous.value sets the new head from the previous head.
 		// The best information i have found to use this is from this link
 		// https://levelup.gitconnected.com/selfmade-stack-class-in-java-d401dc7d68f0
 		// It has probably helped me the most in writing this code.
 		// I will most likely refer to this link now later on.
+		 */
 		if (!this.isEmpty()) {
 			T removed = this.value;
 
@@ -118,7 +125,9 @@ public class Stack<T> implements StackADT<T> {
 		
 		// implement the method here, the return null is added to handle compile error, 
 		// you can delete it.
-		// Looks at the top of the stack and returns it
+		/**Looks at the top of the stack and returns it
+		 *
+		 */
 		return this.value;
 	}
 
@@ -131,7 +140,9 @@ public class Stack<T> implements StackADT<T> {
 		
 		// implement the method here, the return false is added to handle compile error, 
 		// you can delete it.
-		// checks if the stack is empty
+		/** checks if the stack is empty
+		 *
+		 */
 		return this.previous == null;
 	}
 
@@ -142,7 +153,9 @@ public class Stack<T> implements StackADT<T> {
 	public int size() {
 		// implement the method here, the return 1 is added to handle compile error, 
 		// you can delete it.
-		// Recursively count and adds one until the last item is reached.
+		/** Recursively count and adds one until the last item is reached.
+		 *
+		 */
 		return this.isEmpty() ? 0 : 1 + this.previous.size();
 	}
 
