@@ -18,6 +18,16 @@ public class PuzzleTester {
 	public static void main(String[] args) {
 		stackTest();
 		puzzleTest();
+
+		Puzzle puzzleToSolve = new Puzzle("testmaze.txt");
+		SolvePuzzle solvePuzzle = new SolvePuzzle(puzzleToSolve);
+
+		if (solvePuzzle.hasValidPath()) {
+			System.out.println("The maze is solved");
+		} else {
+			System.out.println("The maze cannot be solved");
+		}
+
 	}
 
 	private static void stackTest(){
@@ -75,7 +85,6 @@ public class PuzzleTester {
 		} else {
 			System.out.println("Actual Output: " + puzzle.isPositionValid(position.getX(), position.getY()));
 		}
-
 	}
 
 }
