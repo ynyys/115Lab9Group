@@ -89,7 +89,7 @@ public class Puzzle {
 			}
 		}
 		catch (Exception e) {
-			System.out.println("The position:\n " + row + ", " + col +
+			System.out.println("The position:\n row: " + row + ", column: " + col +
 					"\n is out of bounds!");
 		}
 
