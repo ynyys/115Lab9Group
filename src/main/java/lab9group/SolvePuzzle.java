@@ -33,18 +33,27 @@ public class SolvePuzzle {
 	public boolean hasValidPath() {
 
 		boolean pathFound = false;
-		/*
 		Stack<Position> stack = new Stack<>();
 
 		// implement the algorithm here
-		pushValidNeighbour(0 ,0, stack);
+		Position startPosition = new Position();
+		stack.push(startPosition);
 		do {
 			Position position = stack.pop();
-			puzzle.markPath(position.getX(), position.getY());
+			puzzle.isPositionValid(position.getX(), position.getY());
 			puzzle.visitPosition(position.getX(), position.getY());
-			if (puzzle.)
-		} while (stack.size() != 0 && !pathFound);
-		*/
+			if (position.getX() == 12 && position.getY() == 12){
+				pathFound = true;
+			} else {
+				pushValidNeighbour(position.getX() + 1, position.getY() + 1, stack);
+				pushValidNeighbour(position.getX() + 1, position.getY() - 1, stack);
+				pushValidNeighbour(position.getX() - 1, position.getY() + 1, stack);
+				pushValidNeighbour(position.getX() - 1, position.getY() - 1, stack);
+				if (puzzle.isPositionValid(position.getX(), position.getY())){
+					stack.push(position);
+				}
+			}
+		} while (stack.isEmpty() && !pathFound);
 		return pathFound;
 
 	}
@@ -57,7 +66,12 @@ public class SolvePuzzle {
 	 * 
 	 */
 	private void pushValidNeighbour(int x, int y, Stack<Position> stack) {
-
+		if (puzzle.isPositionValid(x, y)){
+			Position position = new Position();
+			position.setX(x);
+			position.setY(y);
+			stack.push(position);
+		}
 	}
 
 
