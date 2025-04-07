@@ -41,22 +41,25 @@ public class SolvePuzzle {
 
 		// implement the algorithm here
 		Position startPosition = new Position();
-		stack.push(startPosition);
-		do {
-			Position position = stack.pop();
-			int x = position.getX();
-			int y = position.getY();
-			puzzle.isPositionValid(position.getY(), position.getX());
-			puzzle.visitPosition(y, x);
-			if (position.getX() == puzzle.getTotalCols() - 1 && position.getY() == puzzle.getTotalRows() - 1){
-				pathFound = true;
-			} else {
-				pushValidNeighbour(position.getY(), position.getX() + 1, stack);
-				pushValidNeighbour(position.getY() + 1, position.getX(), stack);
-				pushValidNeighbour(position.getY() - 1, position.getX(), stack);
-				pushValidNeighbour(position.getY(), position.getX() - 1, stack);
-			}
-		} while (!stack.isEmpty() && !pathFound);
+		if (puzzle.isPositionValid(startPosition.getY(), startPosition.getX())) {
+			stack.push(startPosition);
+			do {
+				Position position = stack.pop();
+				int x = position.getX();
+				int y = position.getY();
+				puzzle.isPositionValid(position.getY(), position.getX());
+				puzzle.visitPosition(y, x);
+				if (position.getX() == puzzle.getTotalCols() - 1 && position.getY() == puzzle.getTotalRows() - 1) {
+					pathFound = true;
+				} else {
+					pushValidNeighbour(position.getY(), position.getX() + 1, stack);
+					pushValidNeighbour(position.getY() + 1, position.getX(), stack);
+					pushValidNeighbour(position.getY() - 1, position.getX(), stack);
+					pushValidNeighbour(position.getY(), position.getX() - 1, stack);
+				}
+			} while (!stack.isEmpty() && !pathFound);
+		}
+
 		return pathFound;
 
 	}
