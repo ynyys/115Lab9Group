@@ -15,7 +15,7 @@ public class SolvePuzzle {
 		this.puzzle = puzzle;
 
 	}
-	
+
 	/**
 	 * Push start onto the stack;
 	 * while stack is not empty AND Path is not found
@@ -24,12 +24,16 @@ public class SolvePuzzle {
 	 *	If the position has reached the end Point on the puzzle
 	 *		Set Path Found to TRUE
 	 *	Else
-	 *		Check all the Neighbour Positions on the Puzzle 
+	 *		Check all the Neighbour Positions on the Puzzle
 	 *		If the position is valid
 	 *			Push to the Stack
 	 *	end
 	 */
 
+	/**
+	 *	Finds a valid through the grid
+	 * @return if there was a valid path found
+	 */
 	public boolean hasValidPath() {
 
 		boolean pathFound = false;
@@ -44,7 +48,7 @@ public class SolvePuzzle {
 			int y = position.getY();
 			puzzle.isPositionValid(position.getY(), position.getX());
 			puzzle.visitPosition(y, x);
-			if (position.getX() == puzzle.getTotalCols() -1 && position.getY() == puzzle.getTotalRows() -1){
+			if (position.getX() == puzzle.getTotalCols() - 1 && position.getY() == puzzle.getTotalRows() - 1){
 				pathFound = true;
 			} else {
 				pushValidNeighbour(position.getY(), position.getX() + 1, stack);
@@ -58,18 +62,27 @@ public class SolvePuzzle {
 	}
 
 	/**
-	 * 
-	 * Check the Neighbour Position on the Puzzle 
+	 *
+	 * Check the Neighbour Position on the Puzzle
 	 * If the position is valid
 	 *Push to the Stack
-	 * 
+	 *
+	 */
+
+	/**
+	 * checks if supposed neighbour is valid, then pushes it onto the stack
+	 * @param y the value of the row
+	 * @param x the value of the column
+	 * @param stack the stack to be pushed on
 	 */
 	private void pushValidNeighbour(int y, int x, Stack<Position> stack) {
-		if (puzzle.isPositionValid(y, x)){
-			Position position = new Position();
-			position.setX(x);
-			position.setY(y);
-			stack.push(position);
+		if (y >= 0 && x >= 0) {
+			if (puzzle.isPositionValid(y, x)) {
+				Position position = new Position();
+				position.setX(x);
+				position.setY(y);
+				stack.push(position);
+			}
 		}
 	}
 }
