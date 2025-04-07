@@ -14,8 +14,10 @@ public class PuzzleTester {
 	 * 
 	 * Lastly also prints the solved or unsolved maze
 	 */
+
 	public static void main(String[] args) {
 		stackTest();
+		puzzleTest();
 	}
 
 	private static void stackTest(){
@@ -51,9 +53,19 @@ public class PuzzleTester {
 		}
 
 		if (stackTest.size() == 1){
-			System.out.println("size  is correct");
+			System.out.println("size is correct");
 		} else {
 			System.out.println("Actual Output: " + stackTest.size());
+		}
+	}
+
+	private static void puzzleTest(){
+		Puzzle puzzle = new Puzzle("testmaze.txt");
+		Position position = new Position();
+		if (puzzle.isPositionValid(position.getX(), position.getY())){
+			System.out.println("isPosition is correct");
+		} else {
+			System.out.println("Actual Output: " + puzzle.isPositionValid(position.getX(), position.getY()));
 		}
 
 	}

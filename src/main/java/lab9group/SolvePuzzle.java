@@ -50,7 +50,7 @@ public class SolvePuzzle {
 				pushValidNeighbour(position.getX() - 1, position.getY() + 1, stack);
 				pushValidNeighbour(position.getX() - 1, position.getY() - 1, stack);
 			}
-		} while (stack.isEmpty() && !pathFound);
+		} while (!stack.isEmpty() && !pathFound);
 		return pathFound;
 
 	}
