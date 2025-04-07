@@ -5,15 +5,12 @@ package lab9group;
  * @modified tika
  * Generic linked implementation of the StackADT
  *
- * This is my literal guess for this I have no clue what I am doing with this
+ *
  * What i found is that we are making 3 constructors that take in:
  * the basic empty stack
  * the stack with only 1 element in it
  * the stack with 2 or more elements in it
- * - with love - Ioan
- * Also additional note: I will change the comments to make it "appropriate" please don't kill me
- * Also also additional note: CECIL I NEED YOU CECIL
- * WHERE IS OMNI MAN
+ * -Ioan
  */
 
 public class Stack<T> implements StackADT<T> {
@@ -29,7 +26,7 @@ public class Stack<T> implements StackADT<T> {
 	public Stack() {
 		//implement here
 
-		/**Simply creating a new stack I am guessing - Ioan
+		/**Simply creating a new stack - Ioan
 		 *
 		 */
 
@@ -57,7 +54,7 @@ public class Stack<T> implements StackADT<T> {
 	 */
 	Stack(Stack<T> previous, T value) {
 		// implement the method here
-		/**Probably establishes this when there is more than 1 item in the list idk. - Ioan
+		/** Establishes this when there is more than 1 item. - Ioan
 		 *
 		 */
 		this.previous = previous;
@@ -70,10 +67,8 @@ public class Stack<T> implements StackADT<T> {
 	@Override
 	public void push(T value) {
 		/** implement the method here
-		*  saves the previous values and then reassigns
-		* this.value as the newest top value to the stack so two parts, the head and tail thing that
-		* was taught in A level.
-		 * previous references now to our old stack instance.
+		 * saves the previous values and then reassigns
+		 * previous references now to our old stack instances. - Ioan
 		 */
 
 
@@ -94,11 +89,7 @@ public class Stack<T> implements StackADT<T> {
 		// you can delete it.
 		/** Checks if it is not empty else will assign the removed the top value. Then checks
 		//if there is anything previous to the value if not then will set to null.
-		// this.previous.value sets the new head from the previous head.
-		// The best information i have found to use this is from this link
-		// https://levelup.gitconnected.com/selfmade-stack-class-in-java-d401dc7d68f0
-		// It has probably helped me the most in writing this code.
-		// I will most likely refer to this link now later on.
+		// this.previous.value sets the new head from the previous value. - Ioan
 		 */
 		if (!this.isEmpty()) {
 			T removed = this.value;
@@ -122,7 +113,7 @@ public class Stack<T> implements StackADT<T> {
 		
 		// implement the method here, the return null is added to handle compile error, 
 		// you can delete it.
-		/**Looks at the top of the stack and returns it
+		/** Looks at the top of the stack and returns it - Ioan
 		 *
 		 */
 		return this.value;
@@ -137,7 +128,7 @@ public class Stack<T> implements StackADT<T> {
 		
 		// implement the method here, the return false is added to handle compile error, 
 		// you can delete it.
-		/** checks if the stack is empty
+		/** checks if the stack is empty - Ioan
 		 *
 		 */
 		return this.previous == null;
@@ -150,7 +141,7 @@ public class Stack<T> implements StackADT<T> {
 	public int size() {
 		// implement the method here, the return 1 is added to handle compile error, 
 		// you can delete it.
-		/** Recursively count and adds one until the last item is reached.
+		/** Recursively count and adds one until the last item is reached. - Ioan
 		 *
 		 */
 		return this.isEmpty() ? 0 : 1 + this.previous.size();
