@@ -21,6 +21,12 @@ public class PuzzleTester {
 		solvableMaze();
 	}
 
+	/**
+	 * ensures that the right path is being found to navigate the maze
+	 * so if its empty then it outputs empty
+	 * if it's stuck at a dead end, then it will pop a value from the stack and go back to previous position
+	 * also checks the top of the stack and the size of the stack
+	 */
 	private static void stackTest(){
 
 		Stack<String> stackTest = new Stack<>();
@@ -60,6 +66,9 @@ public class PuzzleTester {
 		}
 	}
 
+	/**
+	 * ensures that there are no positions that are not available in the maze being chosen
+	 */
 	private static void puzzleTest(){
 		Puzzle puzzle = new Puzzle("testmaze.txt");
 		Position position = new Position();
