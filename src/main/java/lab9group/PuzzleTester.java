@@ -18,16 +18,7 @@ public class PuzzleTester {
 	public static void main(String[] args) {
 		stackTest();
 		puzzleTest();
-
-		Puzzle puzzleToSolve = new Puzzle("testmaze.txt");
-		SolvePuzzle solvePuzzle = new SolvePuzzle(puzzleToSolve);
-
-		if (solvePuzzle.hasValidPath()) {
-			System.out.println("The maze is solved");
-		} else {
-			System.out.println("The maze cannot be solved");
-		}
-
+		solvableMaze();
 	}
 
 	private static void stackTest(){
@@ -84,6 +75,17 @@ public class PuzzleTester {
 			System.out.println("Out Of Bounds is correct");
 		} else {
 			System.out.println("Actual Output: " + puzzle.isPositionValid(position.getX(), position.getY()));
+		}
+	}
+
+	private static void solvableMaze(){
+		Puzzle puzzleToSolve = new Puzzle("testmaze.txt");
+		SolvePuzzle solvePuzzle = new SolvePuzzle(puzzleToSolve);
+
+		if (solvePuzzle.hasValidPath()) {
+			System.out.println("The maze is solved");
+		} else {
+			System.out.println("The maze cannot be solved");
 		}
 	}
 
