@@ -64,7 +64,7 @@ public class SolvePuzzle {
 	 *Push to the Stack
 	 * 
 	 */
-	private void pushValidNeighbour(int x, int y, Stack<Position> stack) {
+	private void pushValidNeighbour(int y, int x, Stack<Position> stack) {
 		if (puzzle.isPositionValid(y, x)){
 			Position position = new Position();
 			position.setX(x);
