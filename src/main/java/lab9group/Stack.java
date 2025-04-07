@@ -69,24 +69,17 @@ public class Stack<T> implements StackADT<T> {
 	public void push(T value) {
 		/** implement the method here
 		* Checks if there is anything in the stack if not then value will simply be added into the stack
-		 * with no extra need for a previous to occur. The annoying thing is, is that I thought the
-		*.push(value) thing would be simple it but all it would do is just call itself like bruh.
-		* Are we supposed to import things like java.util.Stack
-		* or nah? like i am guessing we have to make our own .push() instead
-		* of an inbuilt one
-		* Anyway enough rambling the second part saves the previous values and then reassigns
+		 * with no extra need for a previous to occur.
+		 * The second part saves the previous values and then reassigns
 		* this.value as the newest top value to the stack so two parts, the head and tail thing that
 		* was taught in A level.
 		 */
 
-		if (this.value == null){
-			this.value = value;
-		} else {
-			this.previous = new Stack<>(this.previous, this.value);
-			this.value = value;
+		this.previous = new Stack<T>(this.previous, this.value);
+		this.value = value;
 
 
-		}
+
 	}
 
 	/**
