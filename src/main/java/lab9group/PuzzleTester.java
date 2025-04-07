@@ -78,6 +78,9 @@ public class PuzzleTester {
 		}
 	}
 
+	/**
+	 * tests if the maze can be solved or not
+	 */
 	private static void solvableMaze(){
 		Puzzle puzzleToSolve = new Puzzle("testmaze.txt");
 		SolvePuzzle solvePuzzle = new SolvePuzzle(puzzleToSolve);
