@@ -88,9 +88,9 @@ public class Puzzle {
 				temp = true;
 			}
 		}
-		catch (Exception e) {
+		catch (ArrayIndexOutOfBoundsException e) {
 			System.out.println("The position:\n row: " + row + ", column: " + col +
-					"\n is out of bounds!");
+					".\nIs out of bounds!");
 		}
 
 		return temp;
