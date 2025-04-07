@@ -68,6 +68,14 @@ public class PuzzleTester {
 			System.out.println("Actual Output: " + puzzle.isPositionValid(position.getX(), position.getY()));
 		}
 
+		position.setY(-1);
+		position.setX(-1);
+		if (!puzzle.isPositionValid(position.getX(), position.getX())){
+			System.out.println("Out Of Bounds is correct");
+		} else {
+			System.out.println("Actual Output: " + puzzle.isPositionValid(position.getX(), position.getY()));
+		}
+
 	}
 
 }
