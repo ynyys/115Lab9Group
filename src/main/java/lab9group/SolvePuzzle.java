@@ -45,10 +45,10 @@ public class SolvePuzzle {
 			if (position.getX() == puzzle.getTotalCols() && position.getY() == puzzle.getTotalRows()){
 				pathFound = true;
 			} else {
-				pushValidNeighbour(position.getX() + 1, position.getY() + 1, stack);
-				pushValidNeighbour(position.getX() + 1, position.getY() - 1, stack);
-				pushValidNeighbour(position.getX() - 1, position.getY() + 1, stack);
-				pushValidNeighbour(position.getX() - 1, position.getY() - 1, stack);
+				pushValidNeighbour(position.getX(), position.getY() + 1, stack);
+				pushValidNeighbour(position.getX() + 1, position.getY(), stack);
+				pushValidNeighbour(position.getX() - 1, position.getY(), stack);
+				pushValidNeighbour(position.getX(), position.getY() - 1, stack);
 			}
 		} while (!stack.isEmpty() && !pathFound);
 		return pathFound;
