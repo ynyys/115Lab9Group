@@ -1,7 +1,7 @@
 package lab9group;
 /**
- * @author muneebimtiazahmad
- *
+ * @author muneebimtiazahmad, ammended by @ynyys
+ * Class to generate a puzzle for us to solve, and methods to navigate.
  */
 
 import java.io.File;
@@ -18,7 +18,7 @@ public class Puzzle {
 	private int[][] grid;
 
 	/**
-	 * reads the test file and store the values in the grid
+	 * reads the test file and store the values in the grid.
 	 */
 	public Puzzle(String filename) {
 		try {
@@ -38,19 +38,21 @@ public class Puzzle {
 			}
 
 		} catch (FileNotFoundException fileNotFound) {
-
 			System.out.println("Your filename is not correct!");
 		}
 	}
-	
+
 	/**
-	 * set the value of the grid position to VISITED
+	 * Method to visit a position in the stack.
+	 * @param row index of the row we are visiting.
+	 * @param col index of the column we are visiting.
 	 */
 	public void visitPosition(int row, int col) {
 		grid[row][col] = VISITED;
 	}
 
 	/**
+	 * Method to return the number of rows in the puzzle.
 	 * @return the numOfRows
 	 */
 	public int getTotalRows() {
@@ -58,6 +60,7 @@ public class Puzzle {
 	}
 
 	/**
+	 * Method to return the number of columns in the puzzle.
 	 * @return the numOfCols
 	 */
 	public int getTotalCols() {
@@ -65,7 +68,7 @@ public class Puzzle {
 	}
 	
 	/**
-	 * mark the Path 
+	 * Method to mark the correct path used. Not used.
 	 */
 
 	public void markPath(int row, int col) {
@@ -82,12 +85,17 @@ public class Puzzle {
 
 		boolean temp = false;
 
-		// implement the valid move here.
+		/*
+			This checks if the value at the position of row y and column x, is not...
+			equal to 0 (a wall) and 2 (an already visited position).
+		 */
 		try {
 			if (grid[row][col] != BLOCKED && grid[row][col] != VISITED) {
 				temp = true;
 			}
 		}
+
+		//Prints if an index inputted isnt valid, stops program from bricking itself.
 		catch (ArrayIndexOutOfBoundsException e) {
 			System.out.println("The position:\n row: " + row + ", column: " + col +
 					".\nIs out of bounds!");
@@ -98,8 +106,7 @@ public class Puzzle {
 	}
 
 	/**
-	 * converts the grid to a String format
-	 * returns the result
+	 * Converts object to string. Not used yet.
 	 */
 
 	public String toString() {
