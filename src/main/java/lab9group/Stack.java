@@ -13,6 +13,7 @@ package lab9group;
  * - with love - Ioan
  * Also additional note: I will change the comments to make it "appropriate" please don't kill me
  * Also also additional note: CECIL I NEED YOU CECIL
+ * WHERE IS OMNI MAN
  */
 
 public class Stack<T> implements StackADT<T> {
@@ -23,6 +24,7 @@ public class Stack<T> implements StackADT<T> {
 
 	/**
 	 * Constructor for ????
+	 * (AHEM... IT'S A BASIC ONE >:(... )
 	 */
 	public Stack() {
 		//implement here
@@ -80,7 +82,7 @@ public class Stack<T> implements StackADT<T> {
 		if (this.value == null){
 			this.value = value;
 		} else {
-			this.previous = new Stack <>(this.previous, this.value);
+			this.previous = new Stack<>(this.previous, this.value);
 			this.value = value;
 
 
