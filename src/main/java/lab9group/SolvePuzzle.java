@@ -47,7 +47,6 @@ public class SolvePuzzle {
 				Position position = stack.pop();
 				int x = position.getX();
 				int y = position.getY();
-				puzzle.isPositionValid(position.getY(), position.getX());
 				puzzle.visitPosition(y, x);
 				if (position.getX() == puzzle.getTotalCols() - 1 && position.getY() == puzzle.getTotalRows() - 1) {
 					pathFound = true;
