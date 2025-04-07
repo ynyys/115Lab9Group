@@ -42,16 +42,13 @@ public class SolvePuzzle {
 			Position position = stack.pop();
 			puzzle.isPositionValid(position.getX(), position.getY());
 			puzzle.visitPosition(position.getX(), position.getY());
-			if (position.getX() == 12 && position.getY() == 12){
+			if (position.getX() == puzzle.getTotalCols() && position.getY() == puzzle.getTotalRows()){
 				pathFound = true;
 			} else {
 				pushValidNeighbour(position.getX() + 1, position.getY() + 1, stack);
 				pushValidNeighbour(position.getX() + 1, position.getY() - 1, stack);
 				pushValidNeighbour(position.getX() - 1, position.getY() + 1, stack);
 				pushValidNeighbour(position.getX() - 1, position.getY() - 1, stack);
-				if (puzzle.isPositionValid(position.getX(), position.getY())){
-					stack.push(position);
-				}
 			}
 		} while (stack.isEmpty() && !pathFound);
 		return pathFound;
