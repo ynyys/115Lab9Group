@@ -12,6 +12,7 @@ public class Puzzle {
 
 	private static final int VISITED = 2;
 	private static final int PATH = 3;
+	public static final int BLOCKED = 0;
 
 	private int numOfRows, numOfCols;
 	private int[][] grid;
@@ -69,25 +70,33 @@ public class Puzzle {
 
 	public void markPath(int row, int col) {
 		grid[row][col] = PATH;
-
 	}
 
-	
 	/**
-	 * checks for the valid position, a valid position is the is not blocked (0) and has not been TRIED (2)
-	 * Further, checks if the value is out of bound, it throws an exception.
+	 * Method to check if any given position is valid on the board.
+	 * @param row row of position to check.
+	 * @param col column of position to check.
+	 * @return status of the position.
 	 */
 	public boolean isPositionValid(int row, int col) {
 
 		boolean temp = false;
 
 		// implement the valid move here.
+		try {
+			if (grid[row][col] != BLOCKED && grid[row][col] != VISITED) {
+				temp = true;
+			}
+		}
+		catch (Exception e) {
+			System.out.println("The position:\n " + row + ", " + col +
+					"\n is out of bounds!");
+		}
 
 		return temp;
 
 	}
-	
-	
+
 	/**
 	 * converts the grid to a String format
 	 * returns the result
