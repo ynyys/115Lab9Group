@@ -43,7 +43,7 @@ public class SolvePuzzle {
 			int x = position.getX();
 			int y = position.getY();
 			puzzle.isPositionValid(position.getY(), position.getX());
-			puzzle.visitPosition(x, y);
+			puzzle.visitPosition(y, x);
 			if (position.getX() == puzzle.getTotalCols() && position.getY() == puzzle.getTotalRows()){
 				pathFound = true;
 			} else {
