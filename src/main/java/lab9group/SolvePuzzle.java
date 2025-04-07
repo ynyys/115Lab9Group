@@ -76,7 +76,7 @@ public class SolvePuzzle {
 	 * @param stack the stack to be pushed on
 	 */
 	private void pushValidNeighbour(int y, int x, Stack<Position> stack) {
-		if (y >= 0 && x >= 0) {
+		if (y >= 0 && x >= 0 && y < puzzle.getTotalRows() && x < puzzle.getTotalCols()) {
 			if (puzzle.isPositionValid(y, x)) {
 				Position position = new Position();
 				position.setX(x);
