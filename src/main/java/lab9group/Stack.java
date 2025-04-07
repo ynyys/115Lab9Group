@@ -29,7 +29,9 @@ public class Stack<T> implements StackADT<T> {
 	public Stack() {
 		//implement here
 
-		//Simply creating a new stack I am guessing - Ioan
+		/**Simply creating a new stack I am guessing - Ioan
+		 *
+		 */
 
 		this.previous = null;
 		this.value = null;
@@ -68,14 +70,14 @@ public class Stack<T> implements StackADT<T> {
 	@Override
 	public void push(T value) {
 		/** implement the method here
-		* Checks if there is anything in the stack if not then value will simply be added into the stack
-		 * with no extra need for a previous to occur.
-		 * The second part saves the previous values and then reassigns
+		*  saves the previous values and then reassigns
 		* this.value as the newest top value to the stack so two parts, the head and tail thing that
 		* was taught in A level.
+		 * previous references now to our old stack instance.
 		 */
 
-		this.previous = new Stack<T>(this.previous, this.value);
+
+		this.previous = new Stack<>(this.previous, this.value);
 		this.value = value;
 
 
